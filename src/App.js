@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useState, useEffect } from "react";
+import OutsideClickHandler from "react-outside-click-handler";
 
-function App() {
+function ToDo({ toDoText, project }) {
+  const [selected, setSelected] = React.useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="clickHandleWrapper">
+      <OutsideClickHandler onOutsideClick={() => setSelected(false)}>
+        <div
+          className={`todo${selected ? " selected" : ""}`}
+          onClick={() => setSelected(true)}
         >
-          Learn React
-        </a>
-      </header>
+          <div className="leftPortion">
+            <div>checkbox placeholder</div>
+            <div className="todo-description">
+              <div className="todo-title">{toDoText}</div>
+              {project ? <div className="todo-project">{project}</div> : null}
+            </div>
+            <div>tag(s) placeholder</div>
+          </div>
+
+          <div className="rightPortion">deadline placeholder</div>
+        </div>
+      </OutsideClickHandler>
     </div>
   );
+}
+
+function App() {
+  return <ToDo toDoText={"This is a dummy todo"} project={"testproject"} />;
 }
 
 export default App;

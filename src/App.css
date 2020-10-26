@@ -1,38 +1,44 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.todo {
+  color: black;
+  background-color: white;
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 0 8px;
 }
 
-.App-link {
-  color: #61dafb;
+.selected {
+  background-color: lightblue;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.clickHandleWrapper {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.todo-description {
+  /* set font for both title and project */
+  font-family: "Ubuntu", sans-serif;
+  padding: 5px 0;
+}
+
+.leftPortion {
+  display: flex;
+  align-items: center;
+}
+
+.todo-title {
+  /* set font size just for title */
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.todo-project {
+  /* set font size for project */
+  font-size: 12px;
+  font-weight: 300;
+  color: darkgrey;
 }
